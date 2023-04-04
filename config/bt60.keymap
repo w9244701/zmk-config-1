@@ -14,6 +14,22 @@
 #include <dt-bindings/zmk/bt.h>
 
 / {
+    combos {
+        compatible = "zmk,combos";
+
+        tilde {
+            bindings = <&kp TILDE>;
+            key-positions = <52 0>;
+            layers = <0>;
+            slow-release;
+        };
+
+        altf4 {
+            bindings = <&kp LA(F4)>;
+            key-positions = <53 4>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -25,6 +41,8 @@
 &kp LSHFT      &kp Z     &kp X     &kp C      &kp V     &kp B   &kp N        &kp M  &kp COMMA     &kp DOT  &kp FSLH  &kp RSHFT
            &kp LCTRL  &kp LGUI  &kp LALT  &kp SPACE  &kp RALT   &mo 1  &kp K_CMENU  &kp RCTRL  &bt BT_CLR
             >;
+
+            sensor-bindings = <&inc_dec_kp undefined>;
         };
 
         layer_raise {
